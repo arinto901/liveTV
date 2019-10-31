@@ -1,10 +1,90 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
 <body>
 
-  <iframe width="1280" height="720" src="https://www.youtube.com/embed/e1GRWeLfBPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
-  
-</body>
-</html>
+<h2>Pilih channel</h2>
+<p>Pilih tab di bawah:</p>
 
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'TVOne')">TVOne</button>
+  <button class="tablinks" onclick="openCity(event, 'SCTV')">SCTV</button>
+  <button class="tablinks" onclick="openCity(event, 'NET TV')">NET TV</button>
+</div>
+
+<div id="TVOne" class="tabcontent">
+  <h3>TVOne</h3>
+<iframe width="420" height="345" src="https://www.youtube.com/watch?v=JuOfAEFh5hI">
+</iframe>
+</div>
+
+<div id="SCTV" class="tabcontent">
+  <h3>SCTV</h3>
+<iframe class="vidio-embed" src="https://www.vidio.com/live/204-sctv-tv-stream/embed?autoplay=true&player_only=true&live_chat=false&mute=false&" width="560" height="317" scrolling="no" frameborder="0" allowfullscreen></iframe><script src="//static-web-prod-vidio.akamaized.net/assets/javascripts/vidio-embed.js"></script>
+</div>
+
+<div id="NET TV" class="tabcontent">
+  <h3>NET TV</h3>
+<iframe class="vidio-embed" src="https://www.vidio.com/live/875-net-tv-stream/embed?autoplay=false&player_only=true&live_chat=false&mute=false&" width="560" height="317" scrolling="no" frameborder="0" allowfullscreen></iframe><script src="//static-web-prod-vidio.akamaized.net/assets/javascripts/vidio-embed.js"></script>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
